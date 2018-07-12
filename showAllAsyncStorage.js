@@ -12,3 +12,9 @@ import Promise from 'bluebird';
     };
 
     dumpRaw().then(data => console.log('EVERYTING IN ASYNC ', data));
+
+    // or
+
+    dumpRaw().then(data => Object.entries(data).forEach(([key, value]) => {
+      console.log(`${key} ${value}`);
+    }));
